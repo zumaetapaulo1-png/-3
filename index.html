@@ -736,26 +736,25 @@
                 this.scene=scene; this.flower=flower;
                 this.origin=new THREE.Vector3();
                 this.msgs=[]; this.lastEmit=-2; this.interval=1.4;
-                this.texts=["Te amo","Eres mi todo","Mi coraz\u00f3n late por ti",
-                    "Eres mi luz","Siempre contigo","Amor eterno","Vivo por ti",
-                    "Eres mi destino","Juntos siempre","Mi vida eres t\u00fa",
-                    "Te necesito","Eres perfecta"];
+                this.texts=["Eres una grandiosa persona","Eres una persona muy importante para mí","Mi coraz\u00f3n late por ti",
+                    "Eres un niña muy bonita","hago lo que sea pa que no estes triste","Tienes una carita muy bonita","Gracias por alegrarme los días",
+                    "Siempre estaré para ti","Eres tan bonita como los atardeceres","I wanna be yours","Te mereces todo lo mejor del mundo Melany <3","Espero alegrarte con esto el dia","Cada que me llega un mensaje tuyo mi corazon se alegra mucho","Gracias por ser tú","Te dedico la canción de Saiko, cosas que no te dije"];
             }
             _sprite(text){
-                const c=document.createElement('canvas'); c.width=512; c.height=128;
-                const x=c.getContext('2d'); x.clearRect(0,0,512,128);
+                const c=document.createElement('canvas'); c.width=2048; c.height=128;
+                const x=c.getContext('2d'); x.clearRect(0,0,2048,128);
                 x.shadowBlur=30; x.shadowColor='rgba(255,60,130,0.9)';
                 x.font='bold 38px Georgia,serif'; x.textAlign='center'; x.textBaseline='middle';
-                x.fillStyle='rgba(255,140,190,0.45)'; x.fillText(text,256,64);
+                x.fillStyle='rgba(255,140,190,0.45)'; x.fillText(text,1024,64);
                 x.shadowBlur=16; x.shadowColor='rgba(255,100,170,0.8)';
-                x.fillStyle='rgba(255,190,220,0.7)'; x.fillText(text,256,64);
+                x.fillStyle='rgba(255,190,220,0.7)'; x.fillText(text,1024,64);
                 x.shadowBlur=6; x.shadowColor='rgba(255,200,230,0.6)';
-                x.fillStyle='#ffffff'; x.fillText(text,256,64);
+                x.fillStyle='#ffffff'; x.fillText(text,1024,64);
                 const sp = new THREE.Sprite(new THREE.SpriteMaterial({
                     map:new THREE.CanvasTexture(c),transparent:true,
                     blending:THREE.AdditiveBlending,depthWrite:false
                 }));
-                sp.scale.set(4.5,1.1,1);
+                sp.scale.set(18.0,1.1,1);
                 this.flower.getWorldPosition(this.origin);
                 sp.position.copy(this.origin); sp.position.y+=0.6;
                 sp.userData={
@@ -779,7 +778,7 @@
                     m.material.opacity=Math.max(0,1-r*r);
                     m.material.rotation+=dt*0.08;
                     const sc=1+r*0.3;
-                    m.scale.set(4.5*sc,1.1*sc,1);
+                    m.scale.set(4.9*sc,1.1*sc,1);
                     if(d.life>=d.maxLife){
                         this.scene.remove(m);
                         m.material.map.dispose(); m.material.dispose();
